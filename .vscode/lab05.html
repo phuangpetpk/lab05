@@ -8,8 +8,9 @@
             }else{
                 xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
             }
-            xmlhttp.onreadystatechange=function(){
-                alert(xmlhttp.readyState + " : " + mxlhttp.Status);
+
+            xmlhttp.onreadystatechange= function() {
+                alert(xmlhttp.readyState + " : " + xmlhttp.status);
                 if(xmlhttp.readyState==4 && xmlhttp.status==200){
                     document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
                 }
@@ -20,9 +21,10 @@
         </script>
     </head>
     <body>
+
         <div id="myDiv">
             <h2>
-                Let AJAX change this text
+                Let AJAX change this Text
             </h2>
         </div>
         <button type="button" onclick="loadXMLDoc()">
